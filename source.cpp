@@ -5,13 +5,13 @@
 class coords{
 
 	public:
-		coords( int a, int b, int c) : a(x){,b(y),c(z)
+		coords( int a, int b, int c) : x(a),y(b),z(c)
 			{
 
 			}
 
 	
-	friend std::ostream& operator<<(std::ostream& out, coords &param);
+	friend std::ostream& operator<<(std::ostream& out, const coords &param);
 
 	private:
 		int x,y,z;		
@@ -21,18 +21,19 @@ class coords{
 
 std::ostream& operator<<(std::ostream& out, const coords &param)
 {
-    out<<param.x<<","<<param.y<<","<<param.z<<endl;
+    out<<param.x<<","<<param.y<<","<<param.z<<std::endl;
 }
+
 
 int main(){
 	
-	std::vector <coords> cords;
-
-	cords.push_back({1,2,3});
-	cords.push_back({5,6,7});
+	std::vector<coords> cords;
+	cords.push_back(coords(1,2,3));
+	cords.push_back(coords(5,6,7));
 	
 	for(coords v : cords)
 		std::cout<<v;
 	std::cin.get();
 
+	return 0;
 }
