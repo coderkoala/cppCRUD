@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<sqlite3.h>
+#include<sqlite_orm.h>
 #define log(x) std::cout<<x<<endl;
 
 class coords{
